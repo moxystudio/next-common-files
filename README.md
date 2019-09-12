@@ -96,10 +96,3 @@ The following example shows how you can use that option in your project:
 	exclude: /inline\/.*.svg$/,
 })];
 ```
-
-## File types
-
-Each plugin handles their own list of file types:
-`raster-images`:  .png, .jpg/jpeg, .gif, .webp, .ico
-`playback`: .mp3, .flac, .wav, .aac, .ogg, .oga, .mp4, .m4a, .webm, .ogv
-`svg`: .svg
