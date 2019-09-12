@@ -67,19 +67,19 @@ Using limit and exclude/include to delineate between data URL items and standard
 ```js
 // Exclude data-url directory
 [withRasterImages({
-	 excluce:/data-url\/.*$/,
+	 excluce: /data-url\/.*$/,
 })];
 
 // Set a higher limit for appropriate directory
 [withRasterImages({
-	include:/data-url\/.*$/,
+	include: /data-url\/.*$/,
 	options: {
 		limit: 300000,
 	},
 })];
 ```
 
-The SVG plugin can receive a `inline` option, which toggles between a list of of loaders and produces a different output. Use this if you want to be returned a string with the content of the SVG file.
+The SVG plugin can receive a `inline` option, which toggles between a list of loaders and produces a different output. Use this if you want to be returned a string with the content of the SVG file.
 
 With the `inline` option set to *true*, the rest of the object will safely spread **only to the rule**.
 
