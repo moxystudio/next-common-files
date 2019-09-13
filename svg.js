@@ -34,6 +34,7 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => (
 
                 const fileLoaders = {
                     loader: require.resolve('url-loader'),
+                    ...userOptions,
                     options: {
                         limit: 0,
                         name: dev ? 'images/[name].[ext]' : 'images/[name].[hash:15].[ext]',
