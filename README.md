@@ -81,7 +81,7 @@ Using limit and exclude/include to delineate between data URL items and standard
 
 The SVG plugin can receive a `inline` option, which toggles between a list of loaders and produces a different output. Use this if you want to be returned a string with the content of the SVG file.
 
-With the `inline` option set to *true*, the rest of the object will safely spread **only to the rule**.
+With the `inline` option set to *true*, the rest of the object will safely spread **only to the rule**, and passing the `use` option will **override the default loaders entirely**..
 
 The following example shows how you can use that option in your project:
 ```js

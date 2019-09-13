@@ -46,8 +46,8 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => (
 
                 config.module.rules.push({
                     test: /\.svg$/,
-                    ...userOptions,
                     ...inline ? inlineLoaders : fileLoaders,
+                    ...userOptions,
                 });
 
                 if (typeof nextConfig.webpack === 'function') {
