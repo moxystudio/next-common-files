@@ -12,9 +12,13 @@ Projects developed with Next.js have to manually insert rules in the configurati
 These plugins quicken the initial setup of a project by removing that effort from the process, demanding less time from the developer.
 
 ## Installation
-``` npm install --save-dev @moxy/next-common-files ```
+
+```sh
+$ npm install --save-dev @moxy/next-common-files
+```
 
 ## Usage
+
 ```js
 // next.config.js
 const { withRasterImages, withPlayback, withSVG } = require('@moxy/next-common-plugins);
@@ -22,8 +26,9 @@ const { withRasterImages, withPlayback, withSVG } = require('@moxy/next-common-p
 module.exports = withRasterImages({
 	/* options */
 });
+
 ```
-You can use `next-compose-plugins` to easily call multiple plugins.
+You can use [next-compose-plugins](https://github.com/cyrilwanner/next-compose-plugins) to easily call multiple plugins.
 ```js
 // next.config.js
 const withPlugins = require('next-compose-plugins');
@@ -43,6 +48,7 @@ All plugins default to using `url-loader` with the `limit` option set to 0, whic
 With the SVG plugin, the list of loaders changes depending on whether it should produce an inline output. If yes, the cadence of the loaders, in order of execution, is: `svg-css-modules-loader`, `svgo-loader` and `raw-loader`.
 
 ## Options
+
 All plugins can be passed an options object that will spread to the `webpack` rule. With one exception, explored further below, you can also expect the object to spread to the `url-loader` configuration. The following examples implement some common situations.
 
 Setting the `url-loader` limit:
@@ -59,7 +65,7 @@ Excluding a directory:
 ```js
 // Exclude /images/
 [withRasterImages({
-	excluce:/images\/.*$/,
+	exclude:/images\/.*$/,
 })];
 ```
 
@@ -67,7 +73,7 @@ Using limit and exclude/include to delineate between data URL items and standard
 ```js
 // Exclude data-url directory
 [withRasterImages({
-	 excluce: /data-url\/.*$/,
+	 exclude: /data-url\/.*$/,
 })];
 
 // Set a higher limit for appropriate directory

@@ -1,6 +1,5 @@
 {
     "root": true,
-    "parser": "babel-eslint",
     "extends":[
         "eslint-config-moxy/es9",
         "eslint-config-moxy/addons/es-modules",
