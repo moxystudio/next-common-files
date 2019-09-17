@@ -11,46 +11,65 @@ Projects developed with Next.js have to manually insert rules in the configurati
 
 These plugins quicken the initial setup of a project by removing that effort from the process, demanding less time from the developer.
 
+
 ## Installation
 
 ```sh
 $ npm install --save-dev @moxy/next-common-files
 ```
 
+
 ## Usage
+
+For single usage:
 
 ```js
 // next.config.js
-const { withRasterImages, withPlayback, withSVG } = require('@moxy/next-common-plugins);
+const { withRasterImages } = require('@moxy/next-common-plugins');
 
 module.exports = withRasterImages({
 	/* options */
 });
-
 ```
-You can use [next-compose-plugins](https://github.com/cyrilwanner/next-compose-plugins) to easily call multiple plugins.
+
+For using multiple plugins, you can use [`next-compose-plugins`](https://github.com/cyrilwanner/next-compose-plugins'). The examples in this README will follow the `next-compose-plugins` structure.
+
 ```js
 // next.config.js
+const { withRasterImages, withPlayback, withSVG } = require('@moxy/next-common-plugins');
 const withPlugins = require('next-compose-plugins');
 
 module.exports = (phase, nextConfig) => {
 	withPlugins([
 		[withRasterImages()],
 		[withPlayback()],
+		[withSVG()],
 	]),
 };
 ```
 
+
 ## Loaders
 
-All plugins default to using `url-loader` with the `limit` option set to 0, which forces a fallback to `file-loader`. This means that, in practice, developers must opt in for `url-loader`'s base64 translation. Developers can choose to set a higher limit in conjunction with other rule options to accommodate the structure of their own project.
+All plugins default to using [`url-loader`](https://github.com/webpack-contrib/url-loader) with the `limit` option set to `0`, which forces a fallback to [`file-loader`](https://github.com/webpack-contrib/file-loader). This means that, in practice, developers must opt in for `url-loader`'s base64 translation. Developers can choose to set a higher limit in conjunction with other rule options to accommodate the structure of their own project.
 
-With the SVG plugin, the list of loaders changes depending on whether it should produce an inline output. If yes, the cadence of the loaders, in order of execution, is: `svg-css-modules-loader`, `svgo-loader` and `raw-loader`.
+With the SVG plugin, the list of loaders changes depending on whether it should produce an inline output. If *true*, the cadence of loaders, in order of execution, becomes: [`svg-css-modules-loader`](https://github.com/kevin940726/svg-css-modules-loader), [`svgo-loader`](https://github.com/rpominov/svgo-loader) and [`raw-loader`](https://github.com/webpack-contrib/raw-loader).
+
 
 ## Options
 
-All plugins can be passed an options object that will spread to the `webpack` rule. With one exception, explored further below, you can also expect the object to spread to the `url-loader` configuration. The following examples implement some common situations.
+All plugins can be passed an options object that will spread to the `webpack` rule. With one exception, explored further below in the SVG section, you can also expect the object to spread to the `url-loader` configuration. You can refer to the [`webpack rule documentation`](https://webpack.js.org/configuration/module/#rule) and the [`url-loader documentation`](https://github.com/webpack-contrib/url-loader#readme) for more details on available options.
 
+Below you can find some common, general examples on how to use the plugins. Please refer to the section specific to each plugin further below for detailed information about each and specifics on how to use them.
+
+Excluding a directory:
+```js
+// Exclude /images/
+[withRasterImages({
+	exclude:/images\/.*$/,
+})],
+
+```
 Setting the `url-loader` limit:
 ```js
 // Set higher limit
@@ -58,15 +77,7 @@ Setting the `url-loader` limit:
 	options: {
 		limit: 300000,
 	},
-})];
-```
-
-Excluding a directory:
-```js
-// Exclude /images/
-[withRasterImages({
-	exclude:/images\/.*$/,
-})];
+})],
 ```
 
 Using limit and exclude/include to delineate between data URL items and standard items:
@@ -74,7 +85,7 @@ Using limit and exclude/include to delineate between data URL items and standard
 // Exclude data-url directory
 [withRasterImages({
 	 exclude: /data-url\/.*$/,
-})];
+})],
 
 // Set a higher limit for appropriate directory
 [withRasterImages({
@@ -82,23 +93,74 @@ Using limit and exclude/include to delineate between data URL items and standard
 	options: {
 		limit: 300000,
 	},
-})];
+})],
 ```
 
-The SVG plugin can receive a `inline` option, which toggles between a list of loaders and produces a different output. Use this if you want to be returned a string with the content of the SVG file.
+Using all three plugins with options acommodated to an example project structure:
 
-With the `inline` option set to *true*, the rest of the object will safely spread **only to the rule**, and passing the `use` option will **override the default loaders entirely**.
+```js
+[withRasterImages({
+    exclude: /favicons\/.*$/,
+})],
+[withPlayback()],
+[withSVG({
+    exclude: [/images\/.*.svg$/, /favicons\/.*.svg/],
+    inline: true,
+})],
+[withSVG({
+    include: /images\/.*.svg$/,
+})],
+```
 
-The following example shows how you can use that option in your project:
+
+## API
+
+
+### raster-images
+
+This plugin is meant to handle **rasterized images**, and tests the file types `.png`, `.jpg`, `jpeg`, `.gif`, `.webp` and`.ico`.
+
+
+### playback
+
+This plugin is meant to handle **video** and **audio** files, and tests the file types `.mp3`, `.flac`, `.wav`, `.aac`, `.ogg`, `.oga`, `.mp4`,  `.m4a`, `.webm` and `.ogv`.
+
+
+### svg 
+
+This plugin is meant to handle **SVG** files,  and tests the file type `.svg`.
+
+Though it defaults to working like the previous plugins, this plugin can also output inline content. You can toggle the output by sending an `inline` option, which is set to *false* by default. Use this if you want to be returned a `string` with the content of the SVG file. When *false* the plugin will behave like the others, using `url-loader`. When *true*, the plugin will use a different set of loaders, namely, and in order of execution,  [`svg-css-modules-loader`](https://github.com/kevin940726/svg-css-modules-loader), [`svgo-loader`](https://github.com/rpominov/svgo-loader) and [`raw-loader`](https://github.com/webpack-contrib/raw-loader).
+
+The available options also change in accordance with the `inline` value. With the `inline` option set to *false*, it will behave like the other plugins. With the `inline` option set to *true*, the options object will safely spread **only to the rule**, and passing the `use` option will **override the default loaders entirely**.
+
+```js
+// If false or not sent, options can be sent like other plugins
+[withSVG({
+    options: {
+        limit: 20000,    // will be safely passed to url-loader
+    },
+})],
+
+// If sent true, 'use' value will override default loaders entirely
+[withSVG({
+    exclude: /inline\/.*.svg$/,    // will be safely passed to rule
+    use: [{
+        loader: 'url-loader',     // only 'url-loader' will be used
+    }],
+})],
+```
+
+The following example shows how you can use the inline option in your project:
 ```js
 // Inline SVGs are stored in /inline/
 [withSVG({
 	include: /inline\/.*.svg$/,
 	inline: true,
-})];
+})],
 
 // Exclude /inline/
 [withSVG({
 	exclude: /inline\/.*.svg$/,
-})];
+})],
 ```
