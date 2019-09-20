@@ -50,13 +50,13 @@ it('should return a function if next config is a function', () => {
 });
 
 it('should change loaders in SVG in accordance with inline option', () => {
-    const inlineArrayOfRules = [];
-    const arrayOfRulesWithDefault = [];
+    const arrayOfSVGRulesWithInline = [];
+    const arrayOfSVGRulesWithDefault = [];
 
-    inlineArrayOfRules.push(withSVG({ inline: true })().webpack(config, options).module.rules);
-    arrayOfRulesWithDefault.push(withSVG()().webpack(config, options).module.rules);
+    arrayOfSVGRulesWithInline.push(withSVG({ inline: true })().webpack(config, options).module.rules);
+    arrayOfSVGRulesWithDefault.push(withSVG()().webpack(config, options).module.rules);
 
-    expect(inlineArrayOfRules).not.toBe(arrayOfRulesWithDefault);
+    expect(arrayOfSVGRulesWithInline).not.toBe(arrayOfSVGRulesWithDefault);
 });
 
 it('should have inline: false as default', () => {

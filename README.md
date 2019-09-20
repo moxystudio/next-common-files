@@ -28,11 +28,11 @@ For single usage:
 const { withRasterImages } = require('@moxy/next-common-plugins');
 
 module.exports = withRasterImages({
-	/* options */
+    /* options */
 });
 ```
 
-For using multiple plugins, you can use [`next-compose-plugins`](https://github.com/cyrilwanner/next-compose-plugins'). The examples in this README will follow the `next-compose-plugins` structure.
+For using multiple plugins, you can use [`next-compose-plugins`](https://github.com/cyrilwanner/next-compose-plugins). The examples in this README will follow the `next-compose-plugins` structure.
 
 ```js
 // next.config.js
@@ -40,11 +40,11 @@ const { withRasterImages, withPlayback, withSVG } = require('@moxy/next-common-p
 const withPlugins = require('next-compose-plugins');
 
 module.exports = (phase, nextConfig) => {
-	withPlugins([
-		[withRasterImages()],
-		[withPlayback()],
-		[withSVG()],
-	]),
+    withPlugins([
+        [withRasterImages()],
+        [withPlayback()],
+        [withSVG()],
+    ]),
 };
 ```
 
@@ -63,40 +63,43 @@ All plugins can be passed an options object that will spread to the `webpack` ru
 Below you can find some common, general examples on how to use the plugins. Please refer to the section specific to each plugin further below for detailed information about each and specifics on how to use them.
 
 Excluding a directory:
+
 ```js
 // Exclude /images/
 [withRasterImages({
-	exclude:/images\/.*$/,
+    exclude: /images\/.*$/,
 })],
-
 ```
+
 Setting the `url-loader` limit:
+
 ```js
 // Set higher limit
 [withRasterImages({
-	options: {
-		limit: 300000,
-	},
+    options: {
+        limit: 300000,
+    },
 })],
 ```
 
 Using limit and exclude/include to delineate between data URL items and standard items:
+
 ```js
 // Exclude data-url directory
 [withRasterImages({
-	 exclude: /data-url\/.*$/,
+     exclude: /data-url\/.*$/,
 })],
 
 // Set a higher limit for appropriate directory
 [withRasterImages({
-	include: /data-url\/.*$/,
-	options: {
-		limit: 300000,
-	},
+    include: /data-url\/.*$/,
+    options: {
+        limit: 300000,
+    },
 })],
 ```
 
-Using all three plugins with options acommodated to an example project structure:
+Using all three plugins with options accommodated to an example project structure:
 
 ```js
 [withRasterImages({
@@ -118,7 +121,7 @@ Using all three plugins with options acommodated to an example project structure
 
 ### raster-images
 
-This plugin is meant to handle **rasterized images**, and tests the file types `.png`, `.jpg`, `jpeg`, `.gif`, `.webp` and`.ico`.
+This plugin is meant to handle **raster images**, and tests the file types `.png`, `.jpg`, `jpeg`, `.gif`, `.webp` and`.ico`.
 
 
 ### playback
@@ -126,7 +129,7 @@ This plugin is meant to handle **rasterized images**, and tests the file types `
 This plugin is meant to handle **video** and **audio** files, and tests the file types `.mp3`, `.flac`, `.wav`, `.aac`, `.ogg`, `.oga`, `.mp4`,  `.m4a`, `.webm` and `.ogv`.
 
 
-### svg 
+### svg
 
 This plugin is meant to handle **SVG** files,  and tests the file type `.svg`.
 
@@ -144,23 +147,38 @@ The available options also change in accordance with the `inline` value. With th
 
 // If sent true, 'use' value will override default loaders entirely
 [withSVG({
-    exclude: /inline\/.*.svg$/,    // will be safely passed to rule
+    exclude: /inline\/.*.svg$/,    // Will be safely passed to rule
     use: [{
-        loader: 'url-loader',     // only 'url-loader' will be used
+        loader: 'url-loader',     // Only 'url-loader' will be used
     }],
 })],
 ```
 
 The following example shows how you can use the inline option in your project:
+
 ```js
 // Inline SVGs are stored in /inline/
 [withSVG({
-	include: /inline\/.*.svg$/,
-	inline: true,
+    include: /inline\/.*.svg$/,
+    inline: true,
 })],
 
 // Exclude /inline/
 [withSVG({
-	exclude: /inline\/.*.svg$/,
+    exclude: /inline\/.*.svg$/,
 })],
 ```
+
+### Tests
+
+Any parameter passed to the `test` command is passed down to Jest.
+
+```sh
+$ npm t
+$ npm t -- --coverage # To generate coverage report
+$ npm t -- --watch              # To run watch mode
+```
+
+### License
+
+Released under the [MIT License](https://opensource.org/licenses/mit-license.php).
