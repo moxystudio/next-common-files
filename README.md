@@ -39,13 +39,11 @@ For using multiple plugins, you can use [`next-compose-plugins`](https://github.
 const { withRasterImages, withPlayback, withSVG } = require('@moxy/next-common-plugins');
 const withPlugins = require('next-compose-plugins');
 
-module.exports = (phase, nextConfig) => {
-    withPlugins([
+module.exports = withPlugins([
         [withRasterImages()],
         [withPlayback()],
         [withSVG()],
-    ]),
-};
+    ]);
 ```
 
 
