@@ -1,6 +1,6 @@
 module.exports = (pluginOptions = {}) => (nextConfig = {}) => (
     {
-        nextConfig,
+        ...nextConfig,
         ...{
             webpack(config, options) {
                 const { dev, isServer } = options;

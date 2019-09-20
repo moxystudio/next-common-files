@@ -1,6 +1,6 @@
 module.exports = (userOptions = {}) => (nextConfig = {}) => (
     {
-        nextConfig,
+        ...nextConfig,
         ...{
             webpack(config, options) {
                 const { assetPrefix } = nextConfig;
