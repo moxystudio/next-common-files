@@ -10,10 +10,10 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => (
                 const inlineLoaders = {
                     use: [
                         {
-                            loader: require.resolve('raw-loader'),
+                            loader: 'raw-loader',
                         },
                         {
-                            loader: require.resolve('svgo-loader'),
+                            loader: 'svgo-loader',
                             options: {
                                 plugins: [
                                     { removeTitle: true },
@@ -24,7 +24,7 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => (
                             },
                         },
                         {
-                            loader: require.resolve('svg-css-modules-loader'),
+                            loader: 'svg-css-modules-loader',
                             options: {
                                 transformId: true,
                             },
@@ -33,7 +33,7 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => (
                 };
 
                 const fileLoaders = {
-                    loader: require.resolve('url-loader'),
+                    loader: 'url-loader',
                     ...userOptions,
                     options: {
                         limit: 0,

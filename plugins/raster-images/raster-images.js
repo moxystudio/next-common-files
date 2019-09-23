@@ -8,7 +8,7 @@ module.exports = (userOptions = {}) => (nextConfig = {}) => (
 
                 config.module.rules.push({
                     test: /\.(png|jpg|jpeg|gif|webp|ico)$/,
-                    loader: require.resolve('url-loader'),
+                    loader: 'url-loader',
                     ...userOptions,
                     options: {
                         limit: 0,

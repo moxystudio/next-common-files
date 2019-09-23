@@ -8,7 +8,7 @@ module.exports = (userOptions = {}) => (nextConfig = {}) => (
 
                 config.module.rules.push({
                     test: /\.(mp3|flac|wav|aac|ogg|oga|mp4|m4a|webm|ogv)$/,
-                    loader: require.resolve('url-loader'),
+                    loader: 'url-loader',
                     ...userOptions,
                     options: {
                         limit: 0,
