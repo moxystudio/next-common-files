@@ -146,6 +146,7 @@ The available options also change in accordance with the `inline` value. With th
 // If sent true, 'use' value will override default loaders entirely
 [withSVG({
     exclude: /inline\/.*.svg$/,    // Will be safely passed to rule
+    inline: true,
     use: [{
         loader: 'url-loader',     // Only 'url-loader' will be used
     }],
