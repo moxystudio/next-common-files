@@ -1,7 +1,7 @@
-/* eslint-disable prefer-import/prefer-import-over-require */
+'use strict';
 
-const withRasterImages = require('./plugins/raster-images/raster-images');
-const withPlayback = require('./plugins/playback/playback');
-const withSVG = require('./plugins/svg/svg');
+const withRasterImages = require('./lib/raster-images');
+const withPlayback = require('./lib/playback');
+const withSVG = require('./lib/svg');
 
 module.exports = { withRasterImages, withPlayback, withSVG };
