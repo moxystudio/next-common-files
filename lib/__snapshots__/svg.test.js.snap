@@ -1,41 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should match snapshot for all results 1`] = `
-Array [
-  Array [
-    Object {
-      "test": /\\\\\\.svg\\$/,
-      "use": Array [
-        Object {
-          "loader": "raw-loader",
-        },
-        Object {
-          "loader": "svgo-loader",
-          "options": Object {
-            "plugins": Array [
-              Object {
-                "removeTitle": true,
-              },
-              Object {
-                "removeDimensions": false,
-              },
-              Object {
-                "removeViewBox": false,
-              },
-              Object {
-                "cleanupIDs": false,
-              },
-            ],
-          },
-        },
-        Object {
-          "loader": "svg-css-modules-loader",
-          "options": Object {
-            "transformId": true,
-          },
-        },
-      ],
-    },
+exports[`should configure a unique rule correctly with inline default (false) 1`] = `
+Object {
+  "test": /\\\\\\.svg\\$/,
+  "use": Array [
     Object {
       "loader": "url-loader",
       "options": Object {
@@ -43,61 +11,64 @@ Array [
         "limit": 0,
         "name": "images/[name].[ext]",
         "outputPath": "static/chunks/media",
-        "publicPath": "undefined_next/static/chunks/media",
+        "publicPath": "_next/static/chunks/media",
       },
-      "test": /\\\\\\.svg\\$/,
+    },
+    Object {
+      "loader": "svgo-loader",
+      "options": Object {
+        "plugins": Array [
+          Object {
+            "removeTitle": true,
+          },
+          Object {
+            "removeDimensions": false,
+          },
+          Object {
+            "removeViewBox": false,
+          },
+          Object {
+            "cleanupIDs": false,
+          },
+        ],
+      },
     },
   ],
-]
+}
 `;
 
-exports[`should match snapshot for all results 2`] = `
-Array [
-  Array [
+exports[`should configure a unique rule correctly with inline true 1`] = `
+Object {
+  "test": /\\\\\\.svg\\$/,
+  "use": Array [
     Object {
-      "test": /\\\\\\.svg\\$/,
-      "use": Array [
-        Object {
-          "loader": "raw-loader",
-        },
-        Object {
-          "loader": "svgo-loader",
-          "options": Object {
-            "plugins": Array [
-              Object {
-                "removeTitle": true,
-              },
-              Object {
-                "removeDimensions": false,
-              },
-              Object {
-                "removeViewBox": false,
-              },
-              Object {
-                "cleanupIDs": false,
-              },
-            ],
-          },
-        },
-        Object {
-          "loader": "svg-css-modules-loader",
-          "options": Object {
-            "transformId": true,
-          },
-        },
-      ],
+      "loader": "raw-loader",
     },
     Object {
-      "loader": "url-loader",
+      "loader": "svgo-loader",
       "options": Object {
-        "emitFile": false,
-        "limit": 0,
-        "name": "images/[name].[ext]",
-        "outputPath": "static/chunks/media",
-        "publicPath": "undefined_next/static/chunks/media",
+        "plugins": Array [
+          Object {
+            "removeTitle": true,
+          },
+          Object {
+            "removeDimensions": false,
+          },
+          Object {
+            "removeViewBox": false,
+          },
+          Object {
+            "cleanupIDs": false,
+          },
+        ],
       },
-      "test": /\\\\\\.svg\\$/,
+    },
+    Object {
+      "loader": "svg-css-modules-loader",
+      "options": Object {
+        "transformId": true,
+      },
     },
   ],
-]
+}
 `;

@@ -1,19 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should match snapshot 1`] = `
-Array [
-  Array [
-    Object {
-      "loader": "url-loader",
-      "options": Object {
-        "emitFile": false,
-        "limit": 0,
-        "name": "images/[name].[ext]",
-        "outputPath": "static/chunks/media",
-        "publicPath": "undefined_next/static/chunks/media",
-      },
-      "test": /\\\\\\.\\(png\\|jpg\\|jpeg\\|gif\\|webp\\|ico\\)\\$/,
-    },
-  ],
-]
+exports[`should configure a unique rule correctly 1`] = `
+Object {
+  "loader": "url-loader",
+  "options": Object {
+    "emitFile": false,
+    "limit": 0,
+    "name": "images/[name].[ext]",
+    "outputPath": "static/chunks/media",
+    "publicPath": "_next/static/chunks/media",
+  },
+  "test": /\\\\\\.\\(png\\|jpg\\|jpeg\\|gif\\|webp\\|ico\\)\\$/,
+}
 `;
