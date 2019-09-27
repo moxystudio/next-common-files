@@ -5,7 +5,7 @@
   "main": "./index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "jest",
+    "test": "jest --coverage",
     "prerelease": "npm t && npm run lint",
     "release": "standard-version"
   },
