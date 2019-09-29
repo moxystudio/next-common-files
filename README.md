@@ -5,7 +5,7 @@
 [codecov-url]:https://codecov.io/gh/moxystudio/next-common-files
 [codecov-image]:https://img.shields.io/codecov/c/github/moxystudio/next-common-files/master.svg
 
-Next.js plugins that insert loaders for common files.
+Next.js plugins that configure webpack with loaders for common files.
 
 Projects developed with Next.js have to manually insert rules in the configuration file for handling file types that are potentially very common across multiple projects.
 
@@ -15,7 +15,7 @@ These plugins quicken the initial setup of a project by removing that effort fro
 ## Installation
 
 ```sh
-$ npm install --save-dev @moxy/next-common-files
+$ npm install --save @moxy/next-common-files
 ```
 
 
@@ -51,7 +51,7 @@ module.exports = withPlugins([
 
 All plugins default to using [`url-loader`](https://github.com/webpack-contrib/url-loader) with the `limit` option set to `0`, which forces a fallback to [`file-loader`](https://github.com/webpack-contrib/file-loader). This means that, in practice, developers must opt in for `url-loader`'s base64 translation. Developers can choose to set a higher limit in conjunction with other rule options to accommodate the structure of their own project.
 
-With the SVG plugin, the list of loaders changes depending on whether it should produce an inline output. If *true*, the cadence of loaders, in order of execution, becomes: [`svg-css-modules-loader`](https://github.com/kevin940726/svg-css-modules-loader), [`svgo-loader`](https://github.com/rpominov/svgo-loader) and [`raw-loader`](https://github.com/webpack-contrib/raw-loader).
+With the SVG plugin, [`svgo-loader`](https://github.com/rpominov/svgo-loader) is added to optimize the SVG files. The SVG plugin can also give an inline output, toggled using an `inline` option. When *true*, this plugin also uses [`svg-css-modules-loader`](https://github.com/kevin940726/svg-css-modules-loader), which uniquifies CSS classes in the SVG file.
 
 
 ## Options
@@ -131,7 +131,9 @@ This plugin is meant to handle **video** and **audio** files, and tests the file
 
 This plugin is meant to handle **SVG** files,  and tests the file type `.svg`.
 
-Though it defaults to working like the previous plugins, this plugin can also output inline content. You can toggle the output by sending an `inline` option, which is set to *false* by default. Use this if you want to be returned a `string` with the content of the SVG file. When *false* the plugin will behave like the others, using `url-loader`. When *true*, the plugin will use a different set of loaders, namely, and in order of execution,  [`svg-css-modules-loader`](https://github.com/kevin940726/svg-css-modules-loader), [`svgo-loader`](https://github.com/rpominov/svgo-loader) and [`raw-loader`](https://github.com/webpack-contrib/raw-loader).
+This plugin adds the [`svgo-loader`](https://github.com/rpominov/svgo-loader) to optimize the SVG files it loads. 
+
+Though it defaults to working like the previous plugins, this plugin can also output inline content. You can toggle the output by sending an `inline` option, which is set to *false* by default. Use this if you want to be returned a `string` with the content of the SVG file. When *false* the plugin will behave like the others, using `url-loader` together with `svgo-loader`. When *true*, the plugin will use a different set of loaders, including [`svg-css-modules-loader`](https://github.com/kevin940726/svg-css-modules-loader), which uniquifies the CSS classes in the file.
 
 The available options also change in accordance with the `inline` value. With the `inline` option set to *false*, it will behave like the other plugins. With the `inline` option set to *true*, the options object will safely spread **only to the rule**, and passing the `use` option will **override the default loaders entirely**.
 
@@ -168,13 +170,22 @@ The following example shows how you can use the inline option in your project:
 })],
 ```
 
+**Keep in mind**, when you opt in for the inline output, the CSS classes in your SVG **will be uniquified**, and you must be careful when selecting them. For example, using an attribute selector, as explored in the following snippet:
+
+```css
+/* Selecting an svg file with the original filename 'header-svg-inline.svg' */
+
+[class^=header-svg-inline] {
+    /* ... */
+}
+```
+
 ### Tests
 
 Any parameter passed to the `test` command is passed down to Jest.
 
 ```sh
 $ npm t
-$ npm t -- --coverage # To generate coverage report
 $ npm t -- --watch              # To run watch mode
 ```
 
