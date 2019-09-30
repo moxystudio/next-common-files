@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should configure a unique rule correctly with inline false 1`] = `
+Object {
+  "test": /\\\\\\.svg\\$/,
+  "use": Array [
+    Object {
+      "loader": "<PROJECT_ROOT>/node_modules/url-loader/dist/cjs.js",
+      "options": Object {
+        "emitFile": false,
+        "limit": 0,
+        "name": "images/[name].[ext]",
+        "outputPath": "static/chunks/media",
+        "publicPath": "_next/static/chunks/media",
+      },
+    },
+    Object {
+      "loader": "<PROJECT_ROOT>/node_modules/svgo-loader/index.js",
+      "options": Object {
+        "plugins": Array [
+          Object {
+            "removeTitle": true,
+          },
+          Object {
+            "removeDimensions": false,
+          },
+          Object {
+            "removeViewBox": false,
+          },
+          Object {
+            "cleanupIDs": false,
+          },
+        ],
+      },
+    },
+  ],
+}
+`;
+
+exports[`should configure a unique rule correctly with inline true 1`] = `
+Object {
+  "test": /\\\\\\.svg\\$/,
+  "use": Array [
+    Object {
+      "loader": "<PROJECT_ROOT>/node_modules/raw-loader/dist/cjs.js",
+    },
+    Object {
+      "loader": "<PROJECT_ROOT>/node_modules/svgo-loader/index.js",
+      "options": Object {
+        "plugins": Array [
+          Object {
+            "removeTitle": true,
+          },
+          Object {
+            "removeDimensions": false,
+          },
+          Object {
+            "removeViewBox": false,
+          },
+          Object {
+            "cleanupIDs": false,
+          },
+        ],
+      },
+    },
+    Object {
+      "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+      "options": Object {
+        "transformId": true,
+      },
+    },
+  ],
+}
+`;
