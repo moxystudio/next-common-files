@@ -2,7 +2,7 @@
 
 exports[`should configure a unique rule correctly 1`] = `
 Object {
-  "loader": "url-loader",
+  "loader": "<PROJECT_ROOT>/node_modules/url-loader/dist/cjs.js",
   "options": Object {
     "emitFile": false,
     "limit": 0,

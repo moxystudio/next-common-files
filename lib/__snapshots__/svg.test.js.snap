@@ -5,7 +5,7 @@ Object {
   "test": /\\\\\\.svg\\$/,
   "use": Array [
     Object {
-      "loader": "url-loader",
+      "loader": "<PROJECT_ROOT>/node_modules/url-loader/dist/cjs.js",
       "options": Object {
         "emitFile": false,
         "limit": 0,
@@ -15,7 +15,7 @@ Object {
       },
     },
     Object {
-      "loader": "svgo-loader",
+      "loader": "<PROJECT_ROOT>/node_modules/svgo-loader/index.js",
       "options": Object {
         "plugins": Array [
           Object {
@@ -42,10 +42,10 @@ Object {
   "test": /\\\\\\.svg\\$/,
   "use": Array [
     Object {
-      "loader": "raw-loader",
+      "loader": "<PROJECT_ROOT>/node_modules/raw-loader/dist/cjs.js",
     },
     Object {
-      "loader": "svgo-loader",
+      "loader": "<PROJECT_ROOT>/node_modules/svgo-loader/index.js",
       "options": Object {
         "plugins": Array [
           Object {
@@ -64,7 +64,7 @@ Object {
       },
     },
     Object {
-      "loader": "svg-css-modules-loader",
+      "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
       "options": Object {
         "transformId": true,
       },
