@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should configure a unique rule correctly with inline default (false) 1`] = `
+exports[`should configure a unique rule correctly with inline false 1`] = `
 Object {
   "test": /\\\\\\.svg\\$/,
   "use": Array [
