@@ -1,9 +1,18 @@
 # next-common-files
 
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url]
+
+[npm-url]:https://npmjs.org/package/@moxy/next-common-files
+[downloads-image]:https://img.shields.io/npm/dm/@moxy/next-common-files.svg
+[npm-image]:https://img.shields.io/npm/v/@moxy/next-common-files.svg
 [travis-url]:https://travis-ci.org/moxystudio/next-common-files
 [travis-image]:http://img.shields.io/travis/moxystudio/next-common-files/master.svg
 [codecov-url]:https://codecov.io/gh/moxystudio/next-common-files
 [codecov-image]:https://img.shields.io/codecov/c/github/moxystudio/next-common-files/master.svg
+[david-dm-url]:https://david-dm.org/moxystudio/next-common-files
+[david-dm-image]:https://img.shields.io/david/moxystudio/next-common-files.svg
+[david-dm-dev-url]:https://david-dm.org/moxystudio/next-common-files?type=dev
+[david-dm-dev-image]:https://img.shields.io/david/dev/moxystudio/next-common-files.svg
 
 Next.js plugins that configure webpack with loaders for common files.
 
@@ -170,11 +179,10 @@ The following example shows how you can use the inline option in your project:
 })],
 ```
 
-**Keep in mind**, when you opt in for the inline output, the CSS classes in your SVG **will be uniquified**, and you must be careful when selecting them. For example, using an attribute selector, as explored in the following snippet:
+**Keep in mind**, when you opt in for the inline output, the CSS classes in your SVG **will be uniquified**, and you must be careful when selecting them. For example, using an attribute selector, as shown in the following snippet:
 
 ```css
 /* Selecting an svg file with the original filename 'header-svg-inline.svg' */
-
 [class^=header-svg-inline] {
     /* ... */
 }
@@ -186,7 +194,7 @@ Any parameter passed to the `test` command is passed down to Jest.
 
 ```sh
 $ npm t
-$ npm t -- --watch              # To run watch mode
+$ npm t -- --watch  # To run watch mode
 ```
 
 ### License
