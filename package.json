@@ -1,6 +1,6 @@
 {
   "name": "@moxy/next-common-files",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Next.js plugins that configure webpack with loaders for common files.",
   "main": "./index.js",
   "scripts": {
