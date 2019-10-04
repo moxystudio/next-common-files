@@ -128,17 +128,12 @@ Using all plugins with options accommodated to an example project structure:
 })],
 ```
 
-**Be aware**, if you want to set a maximum limit with the intention of loading all file sizes, `url-loader` **limits possible solutions**, as it will not work when passed `Infinity` or `Number.MAX_VALUE`. Please use `Number.MAX_SAFE_INTEGER` if you're trying to set the highest possible limit.
+If you want to set a top limit that would cover all all file sizes, you can set the limit as `Infinite`. **Keep in mind**, using data-url or inline content will **increase the size of your bundle**, and though using `Infinite` will work, it accepts all file sizes and can lead to unchecked increase in bundle size.
 
 ```js
 [withRasterImages({
-    options: {
-        limit: Infinity, // Will not work, and files will pass to fallback
-    },
-})],
-[withRasterImages({
-    options: {
-        limit: Number.MAX_SAFE_INTEGER, // Will work
+    options: {
+        limit: Infinite, // All files will pass
     },
 })],
 ```
