@@ -18,7 +18,8 @@
     "images",
     "raster",
     "audio",
-    "video"
+    "video",
+    "fonts"
   ],
   "author": "João Silva <joao.silva@moxy.studio>",
   "license": "MIT",
