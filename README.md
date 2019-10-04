@@ -45,12 +45,13 @@ For using multiple plugins, you can use [`next-compose-plugins`](https://github.
 
 ```js
 // next.config.js
-const { withRasterImages, withPlayback, withSVG } = require('@moxy/next-common-plugins');
+const { withRasterImages, withPlayback, withFonts, withSVG } = require('@moxy/next-common-plugins');
 const withPlugins = require('next-compose-plugins');
 
 module.exports = withPlugins([
         [withRasterImages()],
         [withPlayback()],
+        [withFonts()],
         [withSVG()],
     ]);
 ```
@@ -106,13 +107,18 @@ Using limit and exclude/include to delineate between data URL items and standard
 })],
 ```
 
-Using all three plugins with options accommodated to an example project structure:
+Using all plugins with options accommodated to an example project structure:
 
 ```js
 [withRasterImages({
     exclude: /favicons\/.*$/,
 })],
 [withPlayback()],
+[withFonts({
+    options: {
+        limit: 50000,
+    },
+})],
 [withSVG({
     exclude: [/images\/.*.svg$/, /favicons\/.*.svg/],
     inline: true,
@@ -134,6 +140,10 @@ This plugin is meant to handle **raster images**, and tests the file types `.png
 ### playback
 
 This plugin is meant to handle **video** and **audio** files, and tests the file types `.mp3`, `.flac`, `.wav`, `.aac`, `.ogg`, `.oga`, `.mp4`,  `.m4a`, `.webm` and `.ogv`.
+
+### fonts
+
+This plugin is meant to handle **font** files, and tests the file types `.eot`, `.ttf`, `.woff`, `.woff2` and `.oft`.
 
 
 ### svg
