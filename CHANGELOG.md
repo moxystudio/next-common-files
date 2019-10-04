@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/moxystudio/next-common-files/compare/v1.0.0...v1.1.0) (2019-10-04)
+
+
+### Features
+
+* add font loader plugin ([2edfddf](https://github.com/moxystudio/next-common-files/commit/2edfddf))
+
 ## [1.0.0](https://github.com/moxystudio/next-common-files/compare/v0.0.1...v1.0.0) (2019-10-01)
 
 ### 0.0.1 (2019-10-01)
