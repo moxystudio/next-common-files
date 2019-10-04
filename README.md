@@ -128,7 +128,7 @@ Using all plugins with options accommodated to an example project structure:
 })],
 ```
 
-If you want to set a top limit that would cover all all file sizes, you can set the limit as `Infinite`. **Keep in mind**, using data-url or inline content will **increase the size of your bundle**, and though using `Infinite` will work, it accepts all file sizes and can lead to unchecked increase in bundle size.
+If you want to set a top limit thagitt would cover all all file sizes, you can set the limit as `Infinite`. **Keep in mind**, using data-url or inline content will **increase the size of your bundle**, and though using `Infinite` will work, it accepts all file sizes and can lead to unchecked increase in bundle size.
 
 ```js
 [withRasterImages({
