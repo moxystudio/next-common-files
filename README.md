@@ -73,9 +73,18 @@ Below you can find some common, general examples on how to use the plugins. Plea
 Excluding a directory:
 
 ```js
-// Exclude /images/
+// Exclude /hero/ directory
 [withRasterImages({
-    exclude: /images\/.*$/,
+    exclude: /hero\/.*$/,
+})],
+```
+
+Excluding a file by suffix:
+
+```js
+// Exclude files with '.data-url' suffix
+[withRasterImages({
+    exclude: /\.data-url\./,
 })],
 ```
 
@@ -93,14 +102,14 @@ Setting the `url-loader` limit:
 Using limit and exclude/include to delineate between data URL items and standard items:
 
 ```js
-// Exclude data-url directory
+// Exclude files with '.data-url' suffix
 [withRasterImages({
-     exclude: /data-url\/.*$/,
+     exclude: /\.data-url\./,
 })],
 
-// Set a higher limit for appropriate directory
+// Set a higher limit for files with '.data-url' suffix
 [withRasterImages({
-    include: /data-url\/.*$/,
+    include: /\.data-url\./,
     options: {
         limit: 300000,
     },
@@ -120,20 +129,21 @@ Using all plugins with options accommodated to an example project structure:
     },
 })],
 [withSVG({
-    exclude: [/images\/.*.svg$/, /favicons\/.*.svg/],
-    inline: true,
+    exclude: /\.inline\./,
 })],
 [withSVG({
-    include: /images\/.*.svg$/,
+    include: /\.inline\./,
+    inline: true,
 })],
 ```
 
-If you want to set a top limit thagitt would cover all all file sizes, you can set the limit as `Infinite`. **Keep in mind**, using data-url or inline content will **increase the size of your bundle**, and though using `Infinite` will work, it accepts all file sizes and can lead to unchecked increase in bundle size.
+If you want to set a top limit that would cover all file sizes, you can set the limit as `Infinity`. **Keep in mind**, using data-url or inline content will **increase the size of your bundle**, and defaulting to `Infinity` can lead to an unchecked increase in bundle size.
+
 
 ```js
 [withRasterImages({
     options: {
-        limit: Infinite, // All files will pass
+        limit: Infinity, // All files will pass
     },
 })],
 ```
@@ -176,7 +186,7 @@ The available options also change in accordance with the `inline` value. With th
 
 // If sent true, 'use' value will override default loaders entirely
 [withSVG({
-    exclude: /inline\/.*.svg$/,    // Will be safely passed to rule
+    include: /\.inline\./,        // Will be safely passed to rule
     inline: true,
     use: [{
         loader: 'url-loader',     // Only 'url-loader' will be used
@@ -187,15 +197,15 @@ The available options also change in accordance with the `inline` value. With th
 The following example shows how you can use the inline option in your project:
 
 ```js
-// Inline SVGs are stored in /inline/
+// Inline SVGs have a '.inline' suffix
 [withSVG({
-    include: /inline\/.*.svg$/,
+    include: /\.inline\./,
     inline: true,
 })],
 
-// Exclude /inline/
+// Exclude files with '.inline' suffix
 [withSVG({
-    exclude: /inline\/.*.svg$/,
+    exclude: /\.inline\./,
 })],
 ```
 
