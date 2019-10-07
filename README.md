@@ -49,10 +49,10 @@ const { withRasterImages, withPlayback, withFonts, withSVG } = require('@moxy/ne
 const withPlugins = require('next-compose-plugins');
 
 module.exports = withPlugins([
-        [withRasterImages()],
-        [withPlayback()],
-        [withFonts()],
-        [withSVG()],
+        withRasterImages(),
+        withPlayback(),
+        withFonts(),
+        withSVG(),
     ]);
 ```
 
@@ -73,69 +73,79 @@ Below you can find some common, general examples on how to use the plugins. Plea
 Excluding a directory:
 
 ```js
-// Exclude /images/
-[withRasterImages({
+// Exclude /images/ directory
+withRasterImages({
     exclude: /images\/.*$/,
-})],
+}),
+```
+
+Excluding a file by suffix:
+
+```js
+// Exclude files with '.data-url' suffix
+withRasterImages({
+    exclude: /\.data-url\./,
+}),
 ```
 
 Setting the `url-loader` limit:
 
 ```js
 // Set higher limit
-[withRasterImages({
+withRasterImages({
     options: {
         limit: 300000,
     },
-})],
+}),
 ```
 
 Using limit and exclude/include to delineate between data URL items and standard items:
 
 ```js
-// Exclude data-url directory
-[withRasterImages({
-     exclude: /data-url\/.*$/,
-})],
+// Exclude files with '.data-url' suffix
+withRasterImages({
+     exclude: /\.data-url\./,
+}),
 
-// Set a higher limit for appropriate directory
-[withRasterImages({
-    include: /data-url\/.*$/,
+// Set a higher limit for files with '.data-url' suffix
+withRasterImages({
+    include: /\.data-url\./,
     options: {
         limit: 300000,
     },
-})],
+}),
 ```
 
 Using all plugins with options accommodated to an example project structure:
 
 ```js
-[withRasterImages({
+withRasterImages({
     exclude: /favicons\/.*$/,
-})],
-[withPlayback()],
-[withFonts({
+}),
+withPlayback(),
+withFonts({
     options: {
         limit: 50000,
     },
-})],
-[withSVG({
-    exclude: [/images\/.*.svg$/, /favicons\/.*.svg/],
+}),
+withSVG({
+    exclude: /\.inline\./,
+}),
+withSVG({
+    include: /\.inline\./,
     inline: true,
-})],
-[withSVG({
-    include: /images\/.*.svg$/,
-})],
+}),
 ```
 
-If you want to set a top limit thagitt would cover all all file sizes, you can set the limit as `Infinite`. **Keep in mind**, using data-url or inline content will **increase the size of your bundle**, and though using `Infinite` will work, it accepts all file sizes and can lead to unchecked increase in bundle size.
+If you want to set a top limit that would cover all file sizes, you can set the limit as `Infinity`. **Keep in mind**, using data-url or inline content will **increase the size of your bundle**, and defaulting to `Infinity` can lead to an unchecked increase in bundle size.
+
 
 ```js
-[withRasterImages({
+withRasterImages({
     options: {
-        limit: Infinite, // All files will pass
+        limit: Infinity, // All files will pass
     },
-})],
+}),
 ```
 
 
@@ -168,35 +178,35 @@ The available options also change in accordance with the `inline` value. With th
 
 ```js
 // If false or not sent, options can be sent like other plugins
-[withSVG({
+withSVG({
     options: {
         limit: 20000,    // will be safely passed to url-loader
     },
-})],
+}),
 
 // If sent true, 'use' value will override default loaders entirely
-[withSVG({
-    exclude: /inline\/.*.svg$/,    // Will be safely passed to rule
+withSVG({
+    include: /\.inline\./,        // Will be safely passed to rule
     inline: true,
     use: [{
         loader: 'url-loader',     // Only 'url-loader' will be used
     }],
-})],
+}),
 ```
 
 The following example shows how you can use the inline option in your project:
 
 ```js
-// Inline SVGs are stored in /inline/
-[withSVG({
-    include: /inline\/.*.svg$/,
+// Include SVGs with '.inline' suffix
+withSVG({
+    include: /\.inline\./,
     inline: true,
-})],
+}),
 
-// Exclude /inline/
-[withSVG({
-    exclude: /inline\/.*.svg$/,
-})],
+// Exclude SVGs with '.inline' suffix
+withSVG({
+    exclude: /\.inline\./,
+}),
 ```
 
 **Keep in mind**, when you opt in for the inline output, the CSS classes in your SVG **will be uniquified**, and you must be careful when selecting them. For example, using an attribute selector, as shown in the following snippet:
