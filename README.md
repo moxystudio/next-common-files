@@ -49,10 +49,10 @@ const { withRasterImages, withPlayback, withFonts, withSVG } = require('@moxy/ne
 const withPlugins = require('next-compose-plugins');
 
 module.exports = withPlugins([
-        [withRasterImages()],
-        [withPlayback()],
-        [withFonts()],
-        [withSVG()],
+        withRasterImages(),
+        withPlayback(),
+        withFonts(),
+        withSVG(),
     ]);
 ```
 
@@ -74,78 +74,78 @@ Excluding a directory:
 
 ```js
 // Exclude /images/ directory
-[withRasterImages({
+withRasterImages({
     exclude: /images\/.*$/,
-})],
+}),
 ```
 
 Excluding a file by suffix:
 
 ```js
 // Exclude files with '.data-url' suffix
-[withRasterImages({
+withRasterImages({
     exclude: /\.data-url\./,
-})],
+}),
 ```
 
 Setting the `url-loader` limit:
 
 ```js
 // Set higher limit
-[withRasterImages({
+withRasterImages({
     options: {
         limit: 300000,
     },
-})],
+}),
 ```
 
 Using limit and exclude/include to delineate between data URL items and standard items:
 
 ```js
 // Exclude files with '.data-url' suffix
-[withRasterImages({
+withRasterImages({
      exclude: /\.data-url\./,
-})],
+}),
 
 // Set a higher limit for files with '.data-url' suffix
-[withRasterImages({
+withRasterImages({
     include: /\.data-url\./,
     options: {
         limit: 300000,
     },
-})],
+}),
 ```
 
 Using all plugins with options accommodated to an example project structure:
 
 ```js
-[withRasterImages({
+withRasterImages({
     exclude: /favicons\/.*$/,
-})],
-[withPlayback()],
-[withFonts({
+}),
+withPlayback(),
+withFonts({
     options: {
         limit: 50000,
     },
-})],
-[withSVG({
+}),
+withSVG({
     exclude: /\.inline\./,
-})],
-[withSVG({
+}),
+withSVG({
     include: /\.inline\./,
     inline: true,
-})],
+}),
 ```
 
 If you want to set a top limit that would cover all file sizes, you can set the limit as `Infinity`. **Keep in mind**, using data-url or inline content will **increase the size of your bundle**, and defaulting to `Infinity` can lead to an unchecked increase in bundle size.
 
 
 ```js
-[withRasterImages({
+withRasterImages({
     options: {
         limit: Infinity, // All files will pass
     },
-})],
+}),
 ```
 
 
@@ -178,35 +178,35 @@ The available options also change in accordance with the `inline` value. With th
 
 ```js
 // If false or not sent, options can be sent like other plugins
-[withSVG({
+withSVG({
     options: {
         limit: 20000,    // will be safely passed to url-loader
     },
-})],
+}),
 
 // If sent true, 'use' value will override default loaders entirely
-[withSVG({
+withSVG({
     include: /\.inline\./,        // Will be safely passed to rule
     inline: true,
     use: [{
         loader: 'url-loader',     // Only 'url-loader' will be used
     }],
-})],
+}),
 ```
 
 The following example shows how you can use the inline option in your project:
 
 ```js
 // Inline SVGs have a '.inline' suffix
-[withSVG({
+withSVG({
     include: /\.inline\./,
     inline: true,
-})],
+}),
 
 // Exclude SVGs with '.inline' suffix
-[withSVG({
+withSVG({
     exclude: /\.inline\./,
-})],
+}),
 ```
 
 **Keep in mind**, when you opt in for the inline output, the CSS classes in your SVG **will be uniquified**, and you must be careful when selecting them. For example, using an attribute selector, as shown in the following snippet:
