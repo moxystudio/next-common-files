@@ -197,7 +197,7 @@ withSVG({
 The following example shows how you can use the inline option in your project:
 
 ```js
-// Inline SVGs have a '.inline' suffix
+// Include SVGs with '.inline' suffix
 withSVG({
     include: /\.inline\./,
     inline: true,
