@@ -73,9 +73,9 @@ Below you can find some common, general examples on how to use the plugins. Plea
 Excluding a directory:
 
 ```js
-// Exclude /hero/ directory
+// Exclude /images/ directory
 [withRasterImages({
-    exclude: /hero\/.*$/,
+    exclude: /images\/.*$/,
 })],
 ```
 
@@ -203,7 +203,7 @@ The following example shows how you can use the inline option in your project:
     inline: true,
 })],
 
-// Exclude files with '.inline' suffix
+// Exclude SVGs with '.inline' suffix
 [withSVG({
     exclude: /\.inline\./,
 })],
