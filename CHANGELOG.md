@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/moxystudio/next-common-files/compare/v1.1.1...v1.1.2) (2019-10-10)
+
+
+### Bug Fixes
+
+* remove unecessary spread ([d82bf68](https://github.com/moxystudio/next-common-files/commit/d82bf68))
+
 ### [1.1.1](https://github.com/moxystudio/next-common-files/compare/v1.1.0...v1.1.1) (2019-10-07)
 
 
