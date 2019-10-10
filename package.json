@@ -47,6 +47,6 @@
     "standard-version": "^7.0.0"
   },
   "peerDependencies": {
-    "next": ">=8.0.0 <=9.0.0"
+    "next": ">=8 <=9"
   }
 }
