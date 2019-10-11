@@ -218,7 +218,7 @@ withSVG({
 }
 ```
 
-### Tests
+## Tests
 
 Any parameter passed to the `test` command is passed down to Jest.
 
@@ -227,6 +227,6 @@ $ npm t
 $ npm t -- --watch  # To run watch mode
 ```
 
-### License
+## License
 
 Released under the [MIT License](https://opensource.org/licenses/mit-license.php).
