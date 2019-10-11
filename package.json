@@ -2,7 +2,11 @@
   "name": "@moxy/next-common-files",
   "version": "1.1.4",
   "description": "Next.js plugins that configure webpack with loaders for common files.",
-  "main": "./index.js",
+  "main": "index.js",
+  "files": [
+    "lib",
+    "!**/*.test.*"
+  ],
   "scripts": {
     "lint": "eslint .",
     "test": "jest",
