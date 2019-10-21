@@ -20,13 +20,11 @@ Projects developed with Next.js have to manually insert rules in the configurati
 
 These plugins quicken the initial setup of a project by removing that effort from the process, demanding less time from the developer.
 
-
 ## Installation
 
 ```sh
 $ npm install --save @moxy/next-common-files
 ```
-
 
 ## Usage
 
@@ -45,7 +43,7 @@ For using multiple plugins, you can use [`next-compose-plugins`](https://github.
 
 ```js
 // next.config.js
-const { withRasterImages, withPlayback, withFonts, withSVG } = require('@moxy/next-common-plugins');
+const { withRasterImages, withPlayback, withFonts, withSVG, with3D } = require('@moxy/next-common-plugins');
 const withPlugins = require('next-compose-plugins');
 
 module.exports = withPlugins([
@@ -53,16 +51,15 @@ module.exports = withPlugins([
         withPlayback(),
         withFonts(),
         withSVG(),
+        with3D(),
     ]);
 ```
-
 
 ## Loaders
 
 All plugins default to using [`url-loader`](https://github.com/webpack-contrib/url-loader) with the `limit` option set to `0`, which forces a fallback to [`file-loader`](https://github.com/webpack-contrib/file-loader). This means that, in practice, developers must opt in for `url-loader`'s base64 translation. Developers can choose to set a higher limit in conjunction with other rule options to accommodate the structure of their own project.
 
 With the SVG plugin, [`svgo-loader`](https://github.com/rpominov/svgo-loader) is added to optimize the SVG files. The SVG plugin can also give an inline output, toggled using an `inline` option. When *true*, this plugin also uses [`svg-css-modules-loader`](https://github.com/kevin940726/svg-css-modules-loader), which uniquifies CSS classes in the SVG file.
-
 
 ## Options
 
@@ -148,14 +145,11 @@ withRasterImages({
 }),
 ```
 
-
 ## API
-
 
 ### raster-images
 
 This plugin is meant to handle **raster images**, and tests the file types `.png`, `.jpg`, `jpeg`, `.gif`, `.webp` and`.ico`.
-
 
 ### playback
 
@@ -164,7 +158,6 @@ This plugin is meant to handle **video** and **audio** files, and tests the file
 ### fonts
 
 This plugin is meant to handle **font** files, and tests the file types `.eot`, `.ttf`, `.woff`, `.woff2` and `.oft`.
-
 
 ### svg
 
@@ -217,6 +210,10 @@ withSVG({
     /* ... */
 }
 ```
+
+### 3d
+
+This plugin is meant to handle **3d** files, and tests the file types `.obj`, `.mtl`, `.fnt`, and`.glb`.
 
 ## Tests
 
