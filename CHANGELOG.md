@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/moxystudio/next-common-files/compare/v1.1.5...v1.2.0) (2019-10-21)
+
+
+### Features
+
+* add support for 3d files ([e4a149a](https://github.com/moxystudio/next-common-files/commit/e4a149a))
+
 ### [1.1.5](https://github.com/moxystudio/next-common-files/compare/v1.1.4...v1.1.5) (2019-10-14)
 
 ### [1.1.4](https://github.com/moxystudio/next-common-files/compare/v1.1.3...v1.1.4) (2019-10-11)
