@@ -8,7 +8,7 @@ Object {
     "limit": 0,
     "name": "images/[name].[ext]",
     "outputPath": "static/chunks/media",
-    "publicPath": "_next/static/chunks/media",
+    "publicPath": "/_next/static/chunks/media",
   },
   "test": /\\\\\\.\\(png\\|jpg\\|jpeg\\|gif\\|webp\\|ico\\)\\$/,
 }
