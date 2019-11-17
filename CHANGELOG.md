@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/moxystudio/next-common-files/compare/v1.2.1...v1.2.2) (2019-11-17)
+
+
+### Bug Fixes
+
+* fix assetPrefix not being concatenated correctly ([8fa6923](https://github.com/moxystudio/next-common-files/commit/8fa6923))
+
 ### [1.2.1](https://github.com/moxystudio/next-common-files/compare/v1.2.0...v1.2.1) (2019-10-24)
 
 
