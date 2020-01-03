@@ -12,7 +12,7 @@
     "test": "jest",
     "prerelease": "npm t && npm run lint",
     "release": "standard-version",
-    "postrelease": "git push --follow-tags origin master && npm publish"
+    "postrelease": "git push --follow-tags origin HEAD && npm publish"
   },
   "keywords": [
     "next",
