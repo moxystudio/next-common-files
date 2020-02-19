@@ -9,7 +9,7 @@ Object {
       "options": Object {
         "emitFile": false,
         "limit": 0,
-        "name": "images/[name].[ext]",
+        "name": "images/[name].[hash:15].[ext]",
         "outputPath": "static/chunks/media",
         "publicPath": "/_next/static/chunks/media",
       },
