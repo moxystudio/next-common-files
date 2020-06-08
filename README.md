@@ -32,7 +32,7 @@ For single usage:
 
 ```js
 // next.config.js
-const { withRasterImages } = require('@moxy/next-common-plugins');
+const { withRasterImages } = require('@moxy/next-common-files');
 
 module.exports = withRasterImages({
     /* options */
@@ -43,7 +43,7 @@ For using multiple plugins, you can use [`next-compose-plugins`](https://github.
 
 ```js
 // next.config.js
-const { withRasterImages, withPlayback, withFonts, withSVG, with3D } = require('@moxy/next-common-plugins');
+const { withRasterImages, withPlayback, withFonts, withSVG, with3D } = require('@moxy/next-common-files');
 const withPlugins = require('next-compose-plugins');
 
 module.exports = withPlugins([
