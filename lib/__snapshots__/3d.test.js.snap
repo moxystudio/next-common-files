@@ -10,6 +10,6 @@ Object {
     "outputPath": "static/chunks/media",
     "publicPath": "/_next/static/chunks/media",
   },
-  "test": /\\\\\\.\\(obj\\|mtl\\|fnt\\|glb\\)\\$/,
+  "test": /\\\\\\.\\(obj\\|mtl\\|fnt\\|gltf\\|glb\\)\\$/,
 }
 `;
