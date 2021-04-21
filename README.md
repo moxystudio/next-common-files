@@ -213,7 +213,7 @@ withSVG({
 
 ### 3d
 
-This plugin is meant to handle **3d** files, and tests the file types `.obj`, `.mtl`, `.fnt`, and`.glb`.
+This plugin is meant to handle **3d** files, and tests the file types `.obj`, `.mtl`, `.fnt`, `.gltf` and `.glb`.
 
 ## Tests
 
