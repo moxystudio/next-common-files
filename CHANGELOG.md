@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/moxystudio/next-common-files/compare/v1.3.0...v1.4.0) (2021-04-22)
+
+
+### Features
+
+* **3d:** add glTF support ([3720849](https://github.com/moxystudio/next-common-files/commit/3720849acf7c81b8ebb7e66d36dc9461096b2e6a))
+
 ## [1.3.0](https://github.com/moxystudio/next-common-files/compare/v1.2.2...v1.3.0) (2021-01-18)
 
 
