@@ -1,5 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should configure a unique rule correctly with inline false (prod) 1`] = `
+Object {
+  "test": /\\\\\\.svg\\$/,
+  "use": Array [
+    Object {
+      "loader": "<PROJECT_ROOT>/node_modules/url-loader/dist/cjs.js",
+      "options": Object {
+        "emitFile": false,
+        "limit": 0,
+        "name": "images/[name].[contenthash:20].[ext]",
+        "outputPath": "static/chunks/media",
+        "publicPath": "/_next/static/chunks/media",
+      },
+    },
+    Object {
+      "loader": "<PROJECT_ROOT>/node_modules/svgo-loader/index.js",
+      "options": Object {
+        "plugins": Array [
+          Object {
+            "removeTitle": true,
+          },
+          Object {
+            "removeDimensions": false,
+          },
+          Object {
+            "removeViewBox": false,
+          },
+          Object {
+            "cleanupIDs": false,
+          },
+        ],
+      },
+    },
+  ],
+}
+`;
+
 exports[`should configure a unique rule correctly with inline false 1`] = `
 Object {
   "test": /\\\\\\.svg\\$/,
@@ -9,7 +46,7 @@ Object {
       "options": Object {
         "emitFile": false,
         "limit": 0,
-        "name": "images/[name].[hash:15].[ext]",
+        "name": "images/[path][name].[ext]",
         "outputPath": "static/chunks/media",
         "publicPath": "/_next/static/chunks/media",
       },

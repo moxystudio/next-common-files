@@ -1,12 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should configure a unique rule correctly (prod) 1`] = `
+Object {
+  "loader": "<PROJECT_ROOT>/node_modules/url-loader/dist/cjs.js",
+  "options": Object {
+    "emitFile": false,
+    "limit": 0,
+    "name": "3d/[name].[contenthash:20].[ext]",
+    "outputPath": "static/chunks/media",
+    "publicPath": "/_next/static/chunks/media",
+  },
+  "test": /\\\\\\.\\(obj\\|mtl\\|fnt\\|gltf\\|glb\\)\\$/,
+}
+`;
+
 exports[`should configure a unique rule correctly 1`] = `
 Object {
   "loader": "<PROJECT_ROOT>/node_modules/url-loader/dist/cjs.js",
   "options": Object {
     "emitFile": false,
     "limit": 0,
-    "name": "3d/[name].[ext]",
+    "name": "3d/[path][name].[ext]",
     "outputPath": "static/chunks/media",
     "publicPath": "/_next/static/chunks/media",
   },
