@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/moxystudio/next-common-files/compare/v1.4.0...v1.4.1) (2021-05-13)
+
+
+### Bug Fixes
+
+* use name best practices ([d4ca7b6](https://github.com/moxystudio/next-common-files/commit/d4ca7b6907d2c432857d59279cf5a02820d21066))
+
 ## [1.4.0](https://github.com/moxystudio/next-common-files/compare/v1.3.0...v1.4.0) (2021-04-22)
 
 
