@@ -20,7 +20,7 @@ Object {
   "options": Object {
     "emitFile": false,
     "limit": 0,
-    "name": "playback/[path][name].[ext]",
+    "name": "[path][name].[ext]",
     "outputPath": "static/chunks/media",
     "publicPath": "/_next/static/chunks/media",
   },
