@@ -1,12 +1,12 @@
 # next-common-files
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][build-status-image]][build-status-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url]
 
 [npm-url]:https://npmjs.org/package/@moxy/next-common-files
 [downloads-image]:https://img.shields.io/npm/dm/@moxy/next-common-files.svg
 [npm-image]:https://img.shields.io/npm/v/@moxy/next-common-files.svg
-[travis-url]:https://travis-ci.org/moxystudio/next-common-files
-[travis-image]:https://img.shields.io/travis/moxystudio/next-common-files/master.svg
+[build-status-url]:https://github.com/moxystudio/next-common-files/actions
+[build-status-image]:https://img.shields.io/github/workflow/status/moxystudio/next-common-files/Node%20CI/masterg
 [codecov-url]:https://codecov.io/gh/moxystudio/next-common-files
 [codecov-image]:https://img.shields.io/codecov/c/github/moxystudio/next-common-files/master.svg
 [david-dm-url]:https://david-dm.org/moxystudio/next-common-files
@@ -52,6 +52,7 @@ module.exports = withPlugins([
         withFonts(),
         withSVG(),
         with3D(),
+        withJSON5(),
     ]);
 ```
 
@@ -211,9 +212,13 @@ withSVG({
 }
 ```
 
-### 3d
+### 3D
 
 This plugin is meant to handle **3d** files, and tests the file types `.obj`, `.mtl`, `.fnt`, `.gltf` and `.glb`.
+
+### JSON5
+
+This plugin is meant to handle **JSON5** files (`.json5`).
 
 ## Tests
 
