@@ -152,6 +152,8 @@ withRasterImages({
 
 This plugin is meant to handle **raster images**, and tests the file types `.png`, `.jpg`, `jpeg`, `.gif`, `.webp` and`.ico`.
 
+> ⚠️ This plugin disables image static imports in your `next.config.js` file. Check https://nextjs.org/docs/basic-features/image-optimization#disable-static-imports for more information.
+
 ### playback
 
 This plugin is meant to handle **video** and **audio** files, and tests the file types `.mp3`, `.flac`, `.wav`, `.aac`, `.ogg`, `.oga`, `.mp4`,  `.m4a`, `.webm` and `.ogv`.
