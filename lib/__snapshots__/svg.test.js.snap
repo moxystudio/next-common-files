@@ -23,16 +23,204 @@ Array [
         "options": Object {
           "plugins": Array [
             Object {
-              "removeTitle": true,
+              "active": true,
+              "name": "removeDoctype",
             },
             Object {
-              "removeDimensions": false,
+              "active": true,
+              "name": "removeXMLProcInst",
             },
             Object {
-              "removeViewBox": false,
+              "active": true,
+              "name": "removeComments",
             },
             Object {
-              "cleanupIDs": false,
+              "active": true,
+              "name": "removeMetadata",
+            },
+            Object {
+              "active": false,
+              "name": "removeXMLNS",
+            },
+            Object {
+              "active": true,
+              "name": "removeEditorsNSData",
+            },
+            Object {
+              "active": true,
+              "name": "cleanupAttrs",
+            },
+            Object {
+              "active": true,
+              "name": "mergeStyles",
+            },
+            Object {
+              "active": true,
+              "name": "inlineStyles",
+            },
+            Object {
+              "active": true,
+              "name": "minifyStyles",
+            },
+            Object {
+              "active": false,
+              "name": "convertStyleToAttrs",
+            },
+            Object {
+              "active": false,
+              "name": "cleanupIDs",
+            },
+            Object {
+              "active": false,
+              "name": "prefixIds",
+            },
+            Object {
+              "active": false,
+              "name": "removeRasterImages",
+            },
+            Object {
+              "active": true,
+              "name": "removeUselessDefs",
+            },
+            Object {
+              "active": true,
+              "name": "cleanupNumericValues",
+            },
+            Object {
+              "active": false,
+              "name": "cleanupListOfValues",
+            },
+            Object {
+              "active": true,
+              "name": "convertColors",
+            },
+            Object {
+              "active": true,
+              "name": "removeUnknownsAndDefaults",
+            },
+            Object {
+              "active": true,
+              "name": "removeNonInheritableGroupAttrs",
+            },
+            Object {
+              "active": true,
+              "name": "removeUselessStrokeAndFill",
+            },
+            Object {
+              "active": false,
+              "name": "removeViewBox",
+            },
+            Object {
+              "active": true,
+              "name": "cleanupEnableBackground",
+            },
+            Object {
+              "active": true,
+              "name": "removeHiddenElems",
+            },
+            Object {
+              "active": true,
+              "name": "removeEmptyText",
+            },
+            Object {
+              "active": true,
+              "name": "convertShapeToPath",
+            },
+            Object {
+              "active": true,
+              "name": "convertEllipseToCircle",
+            },
+            Object {
+              "active": true,
+              "name": "moveElemsAttrsToGroup",
+            },
+            Object {
+              "active": true,
+              "name": "moveGroupAttrsToElems",
+            },
+            Object {
+              "active": true,
+              "name": "collapseGroups",
+            },
+            Object {
+              "active": true,
+              "name": "convertPathData",
+            },
+            Object {
+              "active": true,
+              "name": "convertTransform",
+            },
+            Object {
+              "active": true,
+              "name": "removeEmptyAttrs",
+            },
+            Object {
+              "active": true,
+              "name": "removeEmptyContainers",
+            },
+            Object {
+              "active": true,
+              "name": "mergePaths",
+            },
+            Object {
+              "active": true,
+              "name": "removeUnusedNS",
+            },
+            Object {
+              "active": false,
+              "name": "sortAttrs",
+            },
+            Object {
+              "active": true,
+              "name": "sortDefsChildren",
+            },
+            Object {
+              "active": true,
+              "name": "removeTitle",
+            },
+            Object {
+              "active": true,
+              "name": "removeDesc",
+            },
+            Object {
+              "active": false,
+              "name": "removeDimensions",
+            },
+            Object {
+              "active": false,
+              "name": "removeAttrs",
+            },
+            Object {
+              "active": false,
+              "name": "removeAttributesBySelector",
+            },
+            Object {
+              "active": false,
+              "name": "removeElementsByAttr",
+            },
+            Object {
+              "active": false,
+              "name": "addClassesToSVGElement",
+            },
+            Object {
+              "active": false,
+              "name": "removeStyleElement",
+            },
+            Object {
+              "active": false,
+              "name": "removeScriptElement",
+            },
+            Object {
+              "active": false,
+              "name": "addAttributesToSVGElement",
+            },
+            Object {
+              "active": false,
+              "name": "removeOffCanvasPaths",
+            },
+            Object {
+              "active": false,
+              "name": "reusePaths",
             },
           ],
         },
@@ -64,16 +252,204 @@ Object {
       "options": Object {
         "plugins": Array [
           Object {
-            "removeTitle": true,
+            "active": true,
+            "name": "removeDoctype",
           },
           Object {
-            "removeDimensions": false,
+            "active": true,
+            "name": "removeXMLProcInst",
           },
           Object {
-            "removeViewBox": false,
+            "active": true,
+            "name": "removeComments",
           },
           Object {
-            "cleanupIDs": false,
+            "active": true,
+            "name": "removeMetadata",
+          },
+          Object {
+            "active": false,
+            "name": "removeXMLNS",
+          },
+          Object {
+            "active": true,
+            "name": "removeEditorsNSData",
+          },
+          Object {
+            "active": true,
+            "name": "cleanupAttrs",
+          },
+          Object {
+            "active": true,
+            "name": "mergeStyles",
+          },
+          Object {
+            "active": true,
+            "name": "inlineStyles",
+          },
+          Object {
+            "active": true,
+            "name": "minifyStyles",
+          },
+          Object {
+            "active": false,
+            "name": "convertStyleToAttrs",
+          },
+          Object {
+            "active": false,
+            "name": "cleanupIDs",
+          },
+          Object {
+            "active": false,
+            "name": "prefixIds",
+          },
+          Object {
+            "active": false,
+            "name": "removeRasterImages",
+          },
+          Object {
+            "active": true,
+            "name": "removeUselessDefs",
+          },
+          Object {
+            "active": true,
+            "name": "cleanupNumericValues",
+          },
+          Object {
+            "active": false,
+            "name": "cleanupListOfValues",
+          },
+          Object {
+            "active": true,
+            "name": "convertColors",
+          },
+          Object {
+            "active": true,
+            "name": "removeUnknownsAndDefaults",
+          },
+          Object {
+            "active": true,
+            "name": "removeNonInheritableGroupAttrs",
+          },
+          Object {
+            "active": true,
+            "name": "removeUselessStrokeAndFill",
+          },
+          Object {
+            "active": false,
+            "name": "removeViewBox",
+          },
+          Object {
+            "active": true,
+            "name": "cleanupEnableBackground",
+          },
+          Object {
+            "active": true,
+            "name": "removeHiddenElems",
+          },
+          Object {
+            "active": true,
+            "name": "removeEmptyText",
+          },
+          Object {
+            "active": true,
+            "name": "convertShapeToPath",
+          },
+          Object {
+            "active": true,
+            "name": "convertEllipseToCircle",
+          },
+          Object {
+            "active": true,
+            "name": "moveElemsAttrsToGroup",
+          },
+          Object {
+            "active": true,
+            "name": "moveGroupAttrsToElems",
+          },
+          Object {
+            "active": true,
+            "name": "collapseGroups",
+          },
+          Object {
+            "active": true,
+            "name": "convertPathData",
+          },
+          Object {
+            "active": true,
+            "name": "convertTransform",
+          },
+          Object {
+            "active": true,
+            "name": "removeEmptyAttrs",
+          },
+          Object {
+            "active": true,
+            "name": "removeEmptyContainers",
+          },
+          Object {
+            "active": true,
+            "name": "mergePaths",
+          },
+          Object {
+            "active": true,
+            "name": "removeUnusedNS",
+          },
+          Object {
+            "active": false,
+            "name": "sortAttrs",
+          },
+          Object {
+            "active": true,
+            "name": "sortDefsChildren",
+          },
+          Object {
+            "active": true,
+            "name": "removeTitle",
+          },
+          Object {
+            "active": true,
+            "name": "removeDesc",
+          },
+          Object {
+            "active": false,
+            "name": "removeDimensions",
+          },
+          Object {
+            "active": false,
+            "name": "removeAttrs",
+          },
+          Object {
+            "active": false,
+            "name": "removeAttributesBySelector",
+          },
+          Object {
+            "active": false,
+            "name": "removeElementsByAttr",
+          },
+          Object {
+            "active": false,
+            "name": "addClassesToSVGElement",
+          },
+          Object {
+            "active": false,
+            "name": "removeStyleElement",
+          },
+          Object {
+            "active": false,
+            "name": "removeScriptElement",
+          },
+          Object {
+            "active": false,
+            "name": "addAttributesToSVGElement",
+          },
+          Object {
+            "active": false,
+            "name": "removeOffCanvasPaths",
+          },
+          Object {
+            "active": false,
+            "name": "reusePaths",
           },
         ],
       },
@@ -101,16 +477,204 @@ Object {
       "options": Object {
         "plugins": Array [
           Object {
-            "removeTitle": true,
+            "active": true,
+            "name": "removeDoctype",
           },
           Object {
-            "removeDimensions": false,
+            "active": true,
+            "name": "removeXMLProcInst",
           },
           Object {
-            "removeViewBox": false,
+            "active": true,
+            "name": "removeComments",
           },
           Object {
-            "cleanupIDs": false,
+            "active": true,
+            "name": "removeMetadata",
+          },
+          Object {
+            "active": false,
+            "name": "removeXMLNS",
+          },
+          Object {
+            "active": true,
+            "name": "removeEditorsNSData",
+          },
+          Object {
+            "active": true,
+            "name": "cleanupAttrs",
+          },
+          Object {
+            "active": true,
+            "name": "mergeStyles",
+          },
+          Object {
+            "active": true,
+            "name": "inlineStyles",
+          },
+          Object {
+            "active": true,
+            "name": "minifyStyles",
+          },
+          Object {
+            "active": false,
+            "name": "convertStyleToAttrs",
+          },
+          Object {
+            "active": false,
+            "name": "cleanupIDs",
+          },
+          Object {
+            "active": false,
+            "name": "prefixIds",
+          },
+          Object {
+            "active": false,
+            "name": "removeRasterImages",
+          },
+          Object {
+            "active": true,
+            "name": "removeUselessDefs",
+          },
+          Object {
+            "active": true,
+            "name": "cleanupNumericValues",
+          },
+          Object {
+            "active": false,
+            "name": "cleanupListOfValues",
+          },
+          Object {
+            "active": true,
+            "name": "convertColors",
+          },
+          Object {
+            "active": true,
+            "name": "removeUnknownsAndDefaults",
+          },
+          Object {
+            "active": true,
+            "name": "removeNonInheritableGroupAttrs",
+          },
+          Object {
+            "active": true,
+            "name": "removeUselessStrokeAndFill",
+          },
+          Object {
+            "active": false,
+            "name": "removeViewBox",
+          },
+          Object {
+            "active": true,
+            "name": "cleanupEnableBackground",
+          },
+          Object {
+            "active": true,
+            "name": "removeHiddenElems",
+          },
+          Object {
+            "active": true,
+            "name": "removeEmptyText",
+          },
+          Object {
+            "active": true,
+            "name": "convertShapeToPath",
+          },
+          Object {
+            "active": true,
+            "name": "convertEllipseToCircle",
+          },
+          Object {
+            "active": true,
+            "name": "moveElemsAttrsToGroup",
+          },
+          Object {
+            "active": true,
+            "name": "moveGroupAttrsToElems",
+          },
+          Object {
+            "active": true,
+            "name": "collapseGroups",
+          },
+          Object {
+            "active": true,
+            "name": "convertPathData",
+          },
+          Object {
+            "active": true,
+            "name": "convertTransform",
+          },
+          Object {
+            "active": true,
+            "name": "removeEmptyAttrs",
+          },
+          Object {
+            "active": true,
+            "name": "removeEmptyContainers",
+          },
+          Object {
+            "active": true,
+            "name": "mergePaths",
+          },
+          Object {
+            "active": true,
+            "name": "removeUnusedNS",
+          },
+          Object {
+            "active": false,
+            "name": "sortAttrs",
+          },
+          Object {
+            "active": true,
+            "name": "sortDefsChildren",
+          },
+          Object {
+            "active": true,
+            "name": "removeTitle",
+          },
+          Object {
+            "active": true,
+            "name": "removeDesc",
+          },
+          Object {
+            "active": false,
+            "name": "removeDimensions",
+          },
+          Object {
+            "active": false,
+            "name": "removeAttrs",
+          },
+          Object {
+            "active": false,
+            "name": "removeAttributesBySelector",
+          },
+          Object {
+            "active": false,
+            "name": "removeElementsByAttr",
+          },
+          Object {
+            "active": false,
+            "name": "addClassesToSVGElement",
+          },
+          Object {
+            "active": false,
+            "name": "removeStyleElement",
+          },
+          Object {
+            "active": false,
+            "name": "removeScriptElement",
+          },
+          Object {
+            "active": false,
+            "name": "addAttributesToSVGElement",
+          },
+          Object {
+            "active": false,
+            "name": "removeOffCanvasPaths",
+          },
+          Object {
+            "active": false,
+            "name": "reusePaths",
           },
         ],
       },
@@ -131,16 +695,204 @@ Object {
       "options": Object {
         "plugins": Array [
           Object {
-            "removeTitle": true,
+            "active": true,
+            "name": "removeDoctype",
           },
           Object {
-            "removeDimensions": false,
+            "active": true,
+            "name": "removeXMLProcInst",
           },
           Object {
-            "removeViewBox": false,
+            "active": true,
+            "name": "removeComments",
           },
           Object {
-            "cleanupIDs": false,
+            "active": true,
+            "name": "removeMetadata",
+          },
+          Object {
+            "active": false,
+            "name": "removeXMLNS",
+          },
+          Object {
+            "active": true,
+            "name": "removeEditorsNSData",
+          },
+          Object {
+            "active": true,
+            "name": "cleanupAttrs",
+          },
+          Object {
+            "active": true,
+            "name": "mergeStyles",
+          },
+          Object {
+            "active": true,
+            "name": "inlineStyles",
+          },
+          Object {
+            "active": true,
+            "name": "minifyStyles",
+          },
+          Object {
+            "active": false,
+            "name": "convertStyleToAttrs",
+          },
+          Object {
+            "active": false,
+            "name": "cleanupIDs",
+          },
+          Object {
+            "active": false,
+            "name": "prefixIds",
+          },
+          Object {
+            "active": false,
+            "name": "removeRasterImages",
+          },
+          Object {
+            "active": true,
+            "name": "removeUselessDefs",
+          },
+          Object {
+            "active": true,
+            "name": "cleanupNumericValues",
+          },
+          Object {
+            "active": false,
+            "name": "cleanupListOfValues",
+          },
+          Object {
+            "active": true,
+            "name": "convertColors",
+          },
+          Object {
+            "active": true,
+            "name": "removeUnknownsAndDefaults",
+          },
+          Object {
+            "active": true,
+            "name": "removeNonInheritableGroupAttrs",
+          },
+          Object {
+            "active": true,
+            "name": "removeUselessStrokeAndFill",
+          },
+          Object {
+            "active": false,
+            "name": "removeViewBox",
+          },
+          Object {
+            "active": true,
+            "name": "cleanupEnableBackground",
+          },
+          Object {
+            "active": true,
+            "name": "removeHiddenElems",
+          },
+          Object {
+            "active": true,
+            "name": "removeEmptyText",
+          },
+          Object {
+            "active": true,
+            "name": "convertShapeToPath",
+          },
+          Object {
+            "active": true,
+            "name": "convertEllipseToCircle",
+          },
+          Object {
+            "active": true,
+            "name": "moveElemsAttrsToGroup",
+          },
+          Object {
+            "active": true,
+            "name": "moveGroupAttrsToElems",
+          },
+          Object {
+            "active": true,
+            "name": "collapseGroups",
+          },
+          Object {
+            "active": true,
+            "name": "convertPathData",
+          },
+          Object {
+            "active": true,
+            "name": "convertTransform",
+          },
+          Object {
+            "active": true,
+            "name": "removeEmptyAttrs",
+          },
+          Object {
+            "active": true,
+            "name": "removeEmptyContainers",
+          },
+          Object {
+            "active": true,
+            "name": "mergePaths",
+          },
+          Object {
+            "active": true,
+            "name": "removeUnusedNS",
+          },
+          Object {
+            "active": false,
+            "name": "sortAttrs",
+          },
+          Object {
+            "active": true,
+            "name": "sortDefsChildren",
+          },
+          Object {
+            "active": true,
+            "name": "removeTitle",
+          },
+          Object {
+            "active": true,
+            "name": "removeDesc",
+          },
+          Object {
+            "active": false,
+            "name": "removeDimensions",
+          },
+          Object {
+            "active": false,
+            "name": "removeAttrs",
+          },
+          Object {
+            "active": false,
+            "name": "removeAttributesBySelector",
+          },
+          Object {
+            "active": false,
+            "name": "removeElementsByAttr",
+          },
+          Object {
+            "active": false,
+            "name": "addClassesToSVGElement",
+          },
+          Object {
+            "active": false,
+            "name": "removeStyleElement",
+          },
+          Object {
+            "active": false,
+            "name": "removeScriptElement",
+          },
+          Object {
+            "active": false,
+            "name": "addAttributesToSVGElement",
+          },
+          Object {
+            "active": false,
+            "name": "removeOffCanvasPaths",
+          },
+          Object {
+            "active": false,
+            "name": "reusePaths",
           },
         ],
       },
