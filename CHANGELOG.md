@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/moxystudio/next-common-files/compare/v1.5.0...v1.5.1) (2021-06-24)
+
+
+### Bug Fixes
+
+* disable next.js static images ([5754ffb](https://github.com/moxystudio/next-common-files/commit/5754ffb67c2466456e37a143bf5255761898ff84))
+
 ## [1.5.0](https://github.com/moxystudio/next-common-files/compare/v1.4.2...v1.5.0) (2021-06-24)
 
 
