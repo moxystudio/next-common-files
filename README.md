@@ -6,7 +6,7 @@
 [downloads-image]:https://img.shields.io/npm/dm/@moxy/next-common-files.svg
 [npm-image]:https://img.shields.io/npm/v/@moxy/next-common-files.svg
 [build-status-url]:https://github.com/moxystudio/next-common-files/actions
-[build-status-image]:https://img.shields.io/github/workflow/status/moxystudio/next-common-files/Node%20CI/masterg
+[build-status-image]:https://img.shields.io/github/workflow/status/moxystudio/next-common-files/Node%20CI/master
 [codecov-url]:https://codecov.io/gh/moxystudio/next-common-files
 [codecov-image]:https://img.shields.io/codecov/c/github/moxystudio/next-common-files/master.svg
 [david-dm-url]:https://david-dm.org/moxystudio/next-common-files
