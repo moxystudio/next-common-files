@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should add rule before Next.js image rule 1`] = `
+Array [
+  Object {
+    "test": "foo",
+  },
+  Object {
+    "loader": "<PROJECT_ROOT>/node_modules/url-loader/dist/cjs.js",
+    "options": Object {
+      "emitFile": false,
+      "limit": 0,
+      "name": "images/[name].[contenthash:20].[ext]",
+      "outputPath": "static/chunks/media",
+      "publicPath": "/_next/static/chunks/media",
+    },
+    "test": /\\\\\\.\\(png\\|jpg\\|jpeg\\|gif\\|webp\\|ico\\|bmp\\)\\$/,
+  },
+  Object {
+    "loader": "next-image-loader",
+  },
+]
+`;
+
 exports[`should configure a unique rule correctly (dev) 1`] = `
 Object {
   "loader": "<PROJECT_ROOT>/node_modules/url-loader/dist/cjs.js",
@@ -10,7 +32,7 @@ Object {
     "outputPath": "static/chunks/media",
     "publicPath": "/_next/static/chunks/media",
   },
-  "test": /\\\\\\.\\(png\\|jpg\\|jpeg\\|gif\\|webp\\|ico\\)\\$/,
+  "test": /\\\\\\.\\(png\\|jpg\\|jpeg\\|gif\\|webp\\|ico\\|bmp\\)\\$/,
 }
 `;
 
@@ -24,6 +46,6 @@ Object {
     "outputPath": "static/chunks/media",
     "publicPath": "/_next/static/chunks/media",
   },
-  "test": /\\\\\\.\\(png\\|jpg\\|jpeg\\|gif\\|webp\\|ico\\)\\$/,
+  "test": /\\\\\\.\\(png\\|jpg\\|jpeg\\|gif\\|webp\\|ico\\|bmp\\)\\$/,
 }
 `;
