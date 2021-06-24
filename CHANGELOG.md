@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/moxystudio/next-common-files/compare/v1.4.2...v1.5.0) (2021-06-24)
+
+
+### Features
+
+* add json5 support ([afbe8b8](https://github.com/moxystudio/next-common-files/commit/afbe8b87a6e80e29f6eca8046b705a027f0ca5a2)), closes [#19](https://github.com/moxystudio/next-common-files/issues/19)
+* add next11 compat ([487763d](https://github.com/moxystudio/next-common-files/commit/487763d206cc123b00d9b0738667a812a3b5a7da))
+* use new svgo ([d2e80fd](https://github.com/moxystudio/next-common-files/commit/d2e80fd553734e7ccb051766cf80d2fb49dec69a)), closes [#22](https://github.com/moxystudio/next-common-files/issues/22)
+
 ### [1.4.2](https://github.com/moxystudio/next-common-files/compare/v1.4.1...v1.4.2) (2021-05-13)
 
 
