@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should configure a unique rule correctly 1`] = `
+Object {
+  "loader": "<PROJECT_ROOT>/node_modules/json5-loader/dist/cjs.js",
+  "test": /\\\\\\.json5\\$/,
+}
+`;
