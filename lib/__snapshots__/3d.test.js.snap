@@ -10,7 +10,7 @@ Object {
     "outputPath": "static/chunks/media",
     "publicPath": "/_next/static/chunks/media",
   },
-  "test": /\\\\\\.\\(obj\\|mtl\\|fnt\\|gltf\\|glb\\)\\$/,
+  "test": /\\\\\\.\\(obj\\|mtl\\|fnt\\)\\$/,
 }
 `;
 
@@ -24,6 +24,62 @@ Object {
     "outputPath": "static/chunks/media",
     "publicPath": "/_next/static/chunks/media",
   },
-  "test": /\\\\\\.\\(obj\\|mtl\\|fnt\\|gltf\\|glb\\)\\$/,
+  "test": /\\\\\\.\\(obj\\|mtl\\|fnt\\)\\$/,
+}
+`;
+
+exports[`should configure two unique rules (prod) 1`] = `
+Object {
+  "loader": "<PROJECT_ROOT>/node_modules/url-loader/dist/cjs.js",
+  "options": Object {
+    "emitFile": false,
+    "limit": 0,
+    "name": "3d/[name].[contenthash:20].[ext]",
+    "outputPath": "static/chunks/media",
+    "publicPath": "/_next/static/chunks/media",
+  },
+  "test": /\\\\\\.\\(obj\\|mtl\\|fnt\\)\\$/,
+}
+`;
+
+exports[`should configure two unique rules (prod) 2`] = `
+Object {
+  "loader": "<PROJECT_ROOT>/node_modules/file-size-loader/dist/cjs.js",
+  "options": Object {
+    "emitFile": false,
+    "limit": 0,
+    "name": "3d/[name].[contenthash:20].[ext]",
+    "outputPath": "static/chunks/media",
+    "publicPath": "/_next/static/chunks/media",
+  },
+  "test": /\\\\\\.\\(gltf\\|glb\\)\\$/,
+}
+`;
+
+exports[`should configure two unique rules correctly 1`] = `
+Object {
+  "loader": "<PROJECT_ROOT>/node_modules/url-loader/dist/cjs.js",
+  "options": Object {
+    "emitFile": false,
+    "limit": 0,
+    "name": "[path][name].[ext]",
+    "outputPath": "static/chunks/media",
+    "publicPath": "/_next/static/chunks/media",
+  },
+  "test": /\\\\\\.\\(obj\\|mtl\\|fnt\\)\\$/,
+}
+`;
+
+exports[`should configure two unique rules correctly 2`] = `
+Object {
+  "loader": "<PROJECT_ROOT>/node_modules/file-size-loader/dist/cjs.js",
+  "options": Object {
+    "emitFile": false,
+    "limit": 0,
+    "name": "[path][name].[ext]",
+    "outputPath": "static/chunks/media",
+    "publicPath": "/_next/static/chunks/media",
+  },
+  "test": /\\\\\\.\\(gltf\\|glb\\)\\$/,
 }
 `;
