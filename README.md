@@ -218,6 +218,20 @@ withSVG({
 
 This plugin is meant to handle **3d** files, and tests the file types `.obj`, `.mtl`, `.fnt`, `.gltf` and `.glb`.
 
+It's not possible to know the size of most of these files when you download them, which is useful to show some kind of progress bar. The server delivers them compressed, using gzip or brotli, meaning the response does not contain the `Content-Length` header. To circumvent this problem, we use [`file-size-loader`](https://github.com/Odrin/file-size-loader) instead of the traditional `file-loader`.
+
+An example of the returned object for `example.glb` would be: 
+
+```js
+import example from './example.glb'
+```
+{
+  src: "/somewhere/example.glb", // URL of the file
+  format: "glb", // given format 
+  size: 1024 // file size in bytes
+}
+```
+
 ### JSON5
 
 This plugin is meant to handle **JSON5** files (`.json5`).

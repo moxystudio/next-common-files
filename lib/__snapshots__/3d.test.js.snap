@@ -2,7 +2,7 @@
 
 exports[`should configure a unique rule correctly (prod) 1`] = `
 Object {
-  "loader": "<PROJECT_ROOT>/node_modules/url-loader/dist/cjs.js",
+  "loader": "<PROJECT_ROOT>/node_modules/file-size-loader/dist/cjs.js",
   "options": Object {
     "emitFile": false,
     "limit": 0,
@@ -16,7 +16,7 @@ Object {
 
 exports[`should configure a unique rule correctly 1`] = `
 Object {
-  "loader": "<PROJECT_ROOT>/node_modules/url-loader/dist/cjs.js",
+  "loader": "<PROJECT_ROOT>/node_modules/file-size-loader/dist/cjs.js",
   "options": Object {
     "emitFile": false,
     "limit": 0,
