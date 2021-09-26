@@ -2,10 +2,9 @@
 
 exports[`should configure a unique rule correctly (prod) 1`] = `
 Object {
-  "loader": "<PROJECT_ROOT>/node_modules/file-size-loader/dist/cjs.js",
+  "loader": "<PROJECT_ROOT>/lib/loaders/file-size-loader.js",
   "options": Object {
     "emitFile": false,
-    "limit": 0,
     "name": "3d/[name].[contenthash:20].[ext]",
     "outputPath": "static/chunks/media",
     "publicPath": "/_next/static/chunks/media",
@@ -16,10 +15,9 @@ Object {
 
 exports[`should configure a unique rule correctly 1`] = `
 Object {
-  "loader": "<PROJECT_ROOT>/node_modules/file-size-loader/dist/cjs.js",
+  "loader": "<PROJECT_ROOT>/lib/loaders/file-size-loader.js",
   "options": Object {
     "emitFile": false,
-    "limit": 0,
     "name": "[path][name].[ext]",
     "outputPath": "static/chunks/media",
     "publicPath": "/_next/static/chunks/media",
