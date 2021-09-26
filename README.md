@@ -225,7 +225,6 @@ An example of the returned object ```example.glb``` would be:
 ```javascript
 import example from './example.glb'
 ```
-
 ```javascript
 {
   src: "/somewhere/example.glb", // URL of the file
