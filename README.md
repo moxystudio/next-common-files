@@ -222,7 +222,7 @@ It's not possible to know the size of most of these files when you download them
 
 An example of the returned object ```example.glb``` would be: 
 
-```javascript
+```js
 import example from './example.glb'
 ```
 {
