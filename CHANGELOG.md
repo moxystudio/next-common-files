@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/moxystudio/next-common-files/compare/v1.5.1...v2.0.0) (2021-09-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* the output of the import of 3d files have changed
+
+### Features
+
+* use file-size-loader for glb / gltf files ([#26](https://github.com/moxystudio/next-common-files/issues/26)) ([3fdfb43](https://github.com/moxystudio/next-common-files/commit/3fdfb434d422e06bc1b4ef641849c56a921102d6))
+
+
+### Bug Fixes
+
+* use built-in file-size-loader ([690304b](https://github.com/moxystudio/next-common-files/commit/690304be102b5254d677c63a3b62e72deb383cad))
+
 ### [1.5.1](https://github.com/moxystudio/next-common-files/compare/v1.5.0...v1.5.1) (2021-06-24)
 
 
