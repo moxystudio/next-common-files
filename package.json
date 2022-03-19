@@ -53,6 +53,6 @@
     "standard-version": "^9.3.1"
   },
   "peerDependencies": {
-    "next": ">=8 <=11"
+    "next": ">=8 <13"
   }
 }
