@@ -47,13 +47,13 @@ const { withRasterImages, withPlayback, withFonts, withSVG, with3D } = require('
 const withPlugins = require('next-compose-plugins');
 
 module.exports = withPlugins([
-        withRasterImages(),
-        withPlayback(),
-        withFonts(),
-        withSVG(),
-        with3D(),
-        withJSON5(),
-    ]);
+    withRasterImages(),
+    withPlayback(),
+    withFonts(),
+    withSVG(),
+    with3D(),
+    withJSON5(),
+]);
 ```
 
 ## Loaders
